@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do</title>
+    <style>
+        input[type="button"] {
+            background-color: rgb(22, 255, 61);
+        }
+        .body {
+            background-color: aqua;
+            color: burlywood;
+            text-align: center;
+            font-size: 20pt;
+            height: 1000px;
+            margin: -25px;
+        }
+    </style>
+    <script>
+        function addItem() {
+            var newItem = document.createElement("div");
+            newItem.innerHTML = document.getElementById("box").value;
+            newItem.onclick = removeItem;
+            document.getElementById("list").appendChild(newItem);
+            saveList();
+        }
+        function removeItem() {
+            document.getElementById("list").removeChild(this);
+            saveList();
+        }
+        function saveList() {
+            localStorage.storedList = document.getElementById("list").innerHTML;
+        }
+        function loadList() {
+            document.getElementById("list").innerHTML = localStorage.storedList;
+            for(var i = 0; i < list.children.length; i++) {
+                list.children[i].onclick = removeItem;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="body pad">
+        <h1>Special To-Do List!</h1>
+        <p>Type to add to the list:</p>
+        <input type="text" id="box"/>
+        </br>
+        <input type="button" value="Add Item" onclick="addItem();"/>
+        <div id="list"></div>
+    </div>
+    <script>
+        if(localStorage.storedList) {
+            loadList();
+        }
+    </script>
+</body>
+</html>

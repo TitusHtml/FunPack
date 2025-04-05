@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Guess game</title>
+      <style>
+            input[type="button"] {
+                  background-color:rgb(218, 161, 20);
+            }
+            .body {
+                  font-size: 50pt;
+                  color: lightgreen;
+                  text-align: center;
+                  background-color: aqua;
+                  height: 1000px;
+                  margin: -100px;
+            }
+      </style>
+      <script>
+            var randomNumber =  Math.floor(Math.random() * 100) + 1;
+            function guessNumber() {
+                  var Guess = document.getElementById("box").value;
+                  if(Guess < randomNumber) {
+                        alert("Guess higher");
+                  }
+                  else {
+                        if(Guess > randomNumber) {
+                              alert("Guess lower");
+                        }
+                        else {
+                              if(Guess = randomNumber) {
+                                    alert("You Win!");
+                              }
+                        }
+                  }
+            }
+      </script>
+</head>
+<body>
+      <div class="body pad">
+            <h1>Guessing Game!</h1>
+            <input type="number" id="box"/>
+            <br>
+            <input type="button" value="Submit" onclick="guessNumber();"/>
+      </div>
+</body>
+</html>

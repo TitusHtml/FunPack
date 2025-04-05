@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check In</title>
+  <style>
+    body {
+      backgrond-color: lightblue;
+      padding: 30px;
+    }
+  </style>
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("passwordBox");
+      var passwordText = password.value;
+      if(passwordText == "Titus is cool") {
+        return true;
+      }
+      alert("Nope! Who do you think you are? A thief! Oh, my goodness!");
+      alert("What a move! Access Denied!")
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <p style="font-size: 30pt;">The Johannes Diamond Discovery</p>
+  <p>Please enter password to view website.</p>
+  <p>Password:<input id="passwordBox" type="password"/></p>
+  <a href="Johannes.html" onclick="return checkPassword();">
+    Click here to submit Password and view website!
+  </a>
+</body>
+</html>
